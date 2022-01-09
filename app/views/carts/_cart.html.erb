@@ -1,8 +1,4 @@
 <article>
-  <% if notice %>
-  <aside id="notice"><%= notice %></aside>
-  <% end %>
-
   <h2>Your Cart</h2>
   <table>
     <%= render(cart.line_items) %>
@@ -10,7 +6,7 @@
     <tfoot>
       <tr>
         <th colspan="2">Total:</th>
-        <th class="price"><%= number_to_currency(cart.total_price) %></td>
+        <th class="price"><%= number_to_currency(cart.total_price) %></th>
       </tr>
     </tfoot>
   </table>

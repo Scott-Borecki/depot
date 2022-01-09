@@ -6,6 +6,6 @@ one:
   unit_price: 9.99
 
 two:
-  product: two
+  product: ruby
   cart: two
-  unit_price: 9.99
+  unit_price: 49.50

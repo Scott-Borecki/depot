@@ -1,6 +1,6 @@
 <article>
   <% if notice %>
-    <aside id="notice"><%= notice %></aside>
+  <aside id="notice"><%= notice %></aside>
   <% end %>
 
   <h2>Your Cart</h2>
@@ -15,8 +15,13 @@
     </tfoot>
   </table>
 
-  <%= button_to 'Empty cart', cart,
-                method: :delete,
-                data: { confirm: 'Are you sure?'} %>
+  <div class="actions">
+    <%= button_to 'Empty cart', cart,
+                  method: :delete,
+                  data: { confirm: 'Are you sure?'} %>
 
+    <%= button_to 'Checkout', new_order_path,
+                  method: :get,
+                  class: "checkout" %>
+  </div>
 </article>

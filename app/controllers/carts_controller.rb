@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: %i[ show edit update destroy ]
-  before_action :ensure_cart_belongs_to_user, only: :show
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts or /carts.json
@@ -75,11 +74,5 @@ class CartsController < ApplicationController
     def invalid_cart
       logger.error "Attempt to access invalid cart #{params[:id]}"
       redirect_to store_index_url, notice: 'Invalid cart'
-    end
-
-    def ensure_cart_belongs_to_user
-      unless @cart.id == session[:cart_id]
-        redirect_to store_index_url, notice: 'That is not your cart!'
-      end
     end
 end
